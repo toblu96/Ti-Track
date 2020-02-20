@@ -1,4 +1,4 @@
-# Hardwareconfig
+# :wrench: Hardware Configuration
 
 
 ## hello
