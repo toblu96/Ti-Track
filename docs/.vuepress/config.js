@@ -5,7 +5,7 @@ module.exports = {
     themeConfig: {
         theme: '@vuepress/theme-default',
 
-        logo:   'assets/img/Logo.png',
+        logo:   '/assets/img/Logo.png',
         nav: [
             { text: 'Hardware', link:   '/hardware/setup'},
             { text: 'Measurements', link:   '/measurements/'},
