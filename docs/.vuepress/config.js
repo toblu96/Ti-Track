@@ -2,6 +2,25 @@ module.exports = {
     title:          'Ti-Track',
     description:    'Bluetooth AoA Tracking System with CC2640R2 and BOOSTXL-AOA',
 
+    plugins: [  
+        [
+            'vuepress-plugin-container',
+            {
+                type: 'right',
+                defaultTitle: '',
+            },
+        ],
+        [
+          'vuepress-plugin-container',
+          {
+            type: 'theorem',
+            before: info => `<div class="theorem"><p class="title">${info}</p>`,
+            after: '</div>',
+          },
+        ],
+        '@vuepress/back-to-top',
+    ],
+
     themeConfig: {
         theme: '@vuepress/theme-default',
 
@@ -14,12 +33,12 @@ module.exports = {
 
         sidebar: {
             '/hardware/': [
-              'setup',  /* /foo/one.html */
-              'hardwareconfig',     /* /foo/ */
+              'setup',
+              'preparations',
             ],
       
             '/measurements/': [
-              '',      /* /bar/ */
+              '',
             ],
       
             // // fallback
@@ -30,19 +49,6 @@ module.exports = {
         smoothScroll: true,
 
         lastUpdated: 'Last Updated',
-
-        plugins: [  '@vuepress/last-updated',
-                    '@vuepress/back-to-top',
-                ]
-    },
-
-    // only for webpack!
-    configureWebpack: {
-        resolve: {
-            alias: {
-                '@assets':   './assets'
-            }
-        },
     },
 
 }
