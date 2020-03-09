@@ -26,20 +26,32 @@ module.exports = {
 
         logo:   '/assets/img/Logo.png',
         nav: [
-            { text: 'Hardware', link:   '/hardware/setup'},
-            { text: 'Measurements', link:   '/measurements/'},
+          { text: 'About', link:   '/about/aboutProject'},
+          { text: 'Hardware', link:   '/hardware/setup'},
+          // { text: 'Measurements', link:   '/measurements/'},
         ],
+
+        algolia: {
+          apiKey: 'b7ea890fb4746ff075a9b2d996fcf649',
+          indexName: 'ti-track'
+        },
         searchPlaceholder: 'Search...',
 
         sidebar: {
+            '/about/': [
+              'aboutProject',
+              'bluetoothAoA',
+            ],
             '/hardware/': [
               'setup',
               'preparations',
+              'testsetup',
+              'rtlsagent',
             ],
       
-            '/measurements/': [
-              '',
-            ],
+            // '/measurements/': [
+            //   '',
+            // ],
       
             // // fallback
             // '/': [

@@ -1,6 +1,9 @@
-# :artificial_satellite: Hardware <Badge text="WIP" type="warning"/>
+# :artificial_satellite: Hardware
 
 ![BOOSTXL-AOA header image](../assets/img/boostxl-aoa_lp_perspective_3D_Model.jpg)
+
+
+<sub>Image source: [http://dev.ti.com/...](http://dev.ti.com/tirex/explore/content/tirex-product-tree/cc26xx_devtools/.metadata/.tirex/project0_boostxl_aoa_bp/images/boostxl-aoa_lp_perspective_3D_Model.jpg)</sub>
 
 ::: theorem Angle of Arrival BoosterPack™
 The Angle of Arrival BoosterPack™ kit (BOOSTXL-AOA) was used for this project. This page contains images and text from Texas Instruments developer hub. For the original documentation and sources please refer to the Ti developer hub.
@@ -27,6 +30,8 @@ The CC2640R2F is a wireless MCU targeting Bluetooth 5 (single-mode BLE) and prop
 
 ![CC2640R2 LaunchPad™](../assets/img/cc2640r2lp_explained.jpg)
 
+<sub>Image source: [http://dev.ti.com/...](http://dev.ti.com/tirex/explore/content/tirex-product-tree/cc26xx_devtools/.metadata/.tirex/project0_cc2640r2lp/images/cc2640r2lp_explained.jpg)</sub>
+
 * On-board emulation tool (XDS110) for flashing & debugging firmware on the target CC2640R2F device
 * 40-pin dual-gender BoosterPack connectors
 * CC2640R2F Microcontroller device
@@ -41,6 +46,7 @@ The BOOSTXL-AOA demonstration board is a BoosterPack intended to be used with th
 
 ![BOOSTXL-AOA](../assets/img/boostxl-aoa_3D_Model.jpg)
 
+<sub>Image source: [http://dev.ti.com/...](http://dev.ti.com/tirex/explore/content/tirex-product-tree/cc26xx_devtools/.metadata/.tirex/project0_boostxl_aoa_bp/images/boostxl-aoa_3D_Model.jpg)</sub>
 
 * 40-pin BoosterPack standard leveraging the LaunchPad ecosystem
 * JSC connector to extend RF path from a Launchpad
