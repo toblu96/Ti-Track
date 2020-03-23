@@ -13,3 +13,12 @@ In the following experiments the antenna array (RTLS Passive) is rotated between
 ![Bluetooth Header Image](./assets/img/Rotation_on_Array.png)
 
 ## Other Signals <Badge text="WIP" type="warning"/>
+
+
+<ButtonGroup 
+    :buttons="[
+        { name: 'First' },
+        { name: 'Second'},
+        { name: 'tbl'  }
+    ]"
+/>
