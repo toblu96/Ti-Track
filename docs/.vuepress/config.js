@@ -28,7 +28,7 @@ module.exports = {
         nav: [
           { text: 'About', link:   '/about/aboutProject'},
           { text: 'Hardware', link:   '/hardware/setup'},
-          // { text: 'Measurements', link:   '/measurements/'},
+          { text: 'Measurements', link:   '/measurements/environment'},
         ],
 
         algolia: {
@@ -49,14 +49,10 @@ module.exports = {
               'rtlsagent',
             ],
       
-            // '/measurements/': [
-            //   '',
-            // ],
+            '/measurements/': [
+              'environment',
+            ],
       
-            // // fallback
-            // '/': [
-            //   '',        /* / */
-            // ]
         },
         smoothScroll: true,
 
