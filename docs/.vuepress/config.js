@@ -37,6 +37,7 @@ module.exports = {
         },
         searchPlaceholder: 'Search...',
 
+        displayAllHeaders: true,
         sidebar: {
             '/about/': [
               'aboutProject',
