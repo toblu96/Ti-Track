@@ -52,6 +52,8 @@ module.exports = {
       
             '/measurements/': [
               'environment',
+              'outdoor',
+              'distance'
             ],
       
         },
