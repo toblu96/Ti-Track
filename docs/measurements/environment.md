@@ -1,5 +1,5 @@
 # Office Environment
-
+## Measurement Setup
 The following measurements were carried out in the offices described here. In addition to the large pieces of furniture, the office also contains various smaller items such as a monitor or office chair. These objects are not shown for the sake of clarity.
 
 ![Bluetooth Header Image](./assets/img/Office_Environment_Detail.png)
@@ -14,11 +14,22 @@ In the following experiments the antenna array (RTLS Passive) is rotated between
 
 ## Other Signals <Badge text="WIP" type="warning"/>
 
-
-<ButtonGroup 
-    :buttons="[
-        { name: 'First' },
-        { name: 'Second'},
-        { name: 'tbl'  }
+## Measurement Results <Badge text="WIP" type="warning"/>
+<LineChartContainer 
+    :PathList="[
+        '/assets/data/Measurements/Indoor/minus90degree.csv',
+        '/assets/data/Measurements/Indoor/minus45degree.csv',
+        '/assets/data/Measurements/Indoor/0degree.csv',
+        '/assets/data/Measurements/Indoor/45degree.csv',
+        '/assets/data/Measurements/Indoor/90degree.csv',
+        '/assets/data/Measurements/Indoor/sweep.csv'
+    ]"
+    :btnText="[
+        '-90°',
+        '-45°',
+        '0°',
+        '45°',
+        '90°',
+        'Sweep'
     ]"
 />

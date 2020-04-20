@@ -4,7 +4,7 @@
             class="v-btn theme--light v-size--default"
             @click="buttonClicked(index)"
             :class="{ 'v-btn--active': (activeIndex == index) }">
-            {{ button.name }}
+            {{ button }}
         </button>
     </div>
 </template>
@@ -16,9 +16,9 @@ export default {
             type: Array,
             default: function() {
                 return [
-                    { name: 'First' },
-                    { name: 'Second'},
-                    { name: 'Last'  }
+                    'First',
+                    'Second',
+                    'Last'
                 ]
             }
         }
@@ -95,11 +95,11 @@ div {
 } */
 .v-btn-toggle > .v-btn.v-btn:first-child {
     border-top-left-radius: inherit;
-    border-bottom-left-radius: inherit;
+    /* border-bottom-left-radius: inherit; */
 }
 .v-btn-toggle > .v-btn.v-btn:last-child {
     border-top-right-radius: inherit;
-    border-bottom-right-radius: inherit;
+    /* border-bottom-right-radius: inherit; */
 }
 
 /* Toggels color when button active */
@@ -118,11 +118,23 @@ div {
     opacity: 0.8;
     padding: 0 12px;
 }
- .v-btn.v-size--default {
+.v-btn.v-size--default {
     height: 36px;
-    min-width: 64px;
+    /* min-width: 64px; */
     padding: 0 16px;
 } 
+
+@media (max-width: 868px) {
+    .v-btn.v-size--default {
+        font-size: 12px;
+    }
+}
+@media (min-width: 868px) {
+    .v-btn.v-size--default {
+        min-width: 64px;
+    }
+}
+
 .v-btn--contained {
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
