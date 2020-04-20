@@ -4,11 +4,14 @@
 		  @activeIndex="changeChart"
 		  :buttons="btnText"
 		  />
-    	<line-chart
-			class="lineChart"
-			v-if="loaded"
-			:chartdata="chartdata"
-			:options="options"/>
+
+		<div class="antiFlicker">
+			<line-chart
+				class="lineChart"
+				v-if="loaded"
+				:chartdata="chartdata"
+				:options="options"/>
+		</div>
 
   	</div>
 </template>
@@ -135,5 +138,8 @@ export default {
 		border-radius: .2em;
 		border-top-left-radius: 0px;
 		padding: .2em
+	}
+	.antiFlicker {
+		min-height: 410px;
 	}
 </style>
