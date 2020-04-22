@@ -26,7 +26,7 @@ module.exports = {
 
         logo:   '/assets/img/Logo.png',
         nav: [
-          { text: 'About', link:   '/about/aboutProject'},
+          { text: 'About', link:   '/about/bluetoothAoA'},
           { text: 'Hardware', link:   '/hardware/setup'},
           { text: 'Measurements', link:   '/measurements/environment'},
         ],
@@ -40,8 +40,8 @@ module.exports = {
         displayAllHeaders: true,
         sidebar: {
             '/about/': [
-              'aboutProject',
               'bluetoothAoA',
+              'aboutProject',
             ],
             '/hardware/': [
               'setup',

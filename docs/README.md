@@ -4,7 +4,7 @@ heroImage: /Ti-Track_Icon.png
 heroText: Ti-Track
 tagline: Bluetooth AoA Tracking System with CC2640R2 and BOOSTXL-AOA from Texas Instruments
 actionText: Introduction →
-actionLink: /about/aboutProject
+actionLink: /about/bluetoothAoA
 features:
 - title: Direction Finding Using Angle of Arrival
   details: In the angle of arrival (AoA) method, the device to which direction is being determined, such as a tag in an RTLS solution, transmits a special direction finding signal using a single antenna. The receiving device, such as a locator in that same RTLS solution, has multiple antennae arranged in an array. As the transmitted signal crosses the array, the receiving device sees a signal phase difference due to the difference in distance from each of the antenna in its array to the transmitting antenna.
