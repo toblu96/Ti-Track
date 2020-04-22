@@ -1,29 +1,31 @@
 <template>
-	<div class="container">
-	  	<button-group 
-		  @activeIndex="changeChart"
-		  :buttons="btnText"
-		  />
+	<div class="py-4">
 
-		<div class="antiFlicker">
+		<tabs @activeIndex="changeChart"
+			:buttons="btnText"/>
+
+		<div class="antiFlicker bg-gray-100 border-b border-l border-r rounded-b">
 			<line-chart
-				class="lineChart"
+				class="p-1"
 				v-if="loaded"
 				:chartdata="chartdata"
 				:options="options"/>
 		</div>
+
+		<Stats :dataset="stats"/>
 
   	</div>
 </template>
 
 <script>
 import LineChart from './LineChart.vue'
-import ButtonGroup from './ButtonGroup.vue'
+import Tabs from './Tabs.vue'
+import Stats from './Stats.vue'
 import * as Papa from 'papaparse';
 
 export default {
   name: 'LineChartContainer',
-  components: { LineChart, ButtonGroup },
+  components: { LineChart, Tabs },
   props: {
     btnText: {
       	type: Array
@@ -61,6 +63,12 @@ export default {
       responsive: true,
 	  maintainAspectRatio: false
 	},
+	stats: [
+		{title: 'min Angle', value: 0, unit: '°'},
+		{title: 'max Angle', value: 0, unit: '°'},
+		{title: 'min RSSI', value: 0, unit: 'dBm'},
+		{title: 'max RSSI', value: 0, unit: 'dBm'}
+	],
 	loaded: false,
 	chartIndex: 0
   }),
@@ -80,8 +88,12 @@ export default {
 			Papa.parse(this.PathList[this.chartIndex], {
 				download: true,
 				complete: function(results) {
-					// Zeitachse rücksetzen
+					// Werte rücksetzen
 					local.chartdata.labels = []
+					local.stats[0].value = null
+					local.stats[1].value = null
+					local.stats[2].value = null
+					local.stats[3].value = null
 
 					// Iteration durch CSV Header (Timestamp, Angle, etc.)
 					for (var header = 0; header < results.data[0].length; header++) {
@@ -107,6 +119,24 @@ export default {
 
 								// Daten einfüllen
 								local.chartdata.datasets[header].data.push(_data[header])
+
+								if (header == 2) {
+									// Winkel min
+									if (local.stats[0].value == null) {local.stats[0].value = _data[header]}
+									local.stats[0].value = Math.min(_data[header], local.stats[0].value)
+									// Winkel max
+									if (local.stats[1].value == null) {local.stats[1].value = _data[header]}
+									local.stats[1].value = Math.max(_data[header], local.stats[1].value)
+								}
+
+								if (header == 5) {
+									// RSSI min
+									if (local.stats[2].value == null) {local.stats[2].value = _data[header]}
+									local.stats[2].value = Math.min(_data[header], local.stats[2].value)
+									// RSSI max
+									if (local.stats[3].value == null) {local.stats[3].value = _data[header]}
+									local.stats[3].value = Math.max(_data[header], local.stats[3].value)
+								}
 							}
 							
 							
@@ -129,16 +159,13 @@ export default {
 </script>
 
 <style scoped>
-	.container {
-		margin-top: 1em;
-		margin-bottom: 1em;
-	}
-	.lineChart {
-		background-color: #f5f5f5;
-		border-radius: .2em;
-		border-top-left-radius: 0px;
-		padding: .2em
-	}
+
+	@tailwind base;
+
+	@tailwind components;
+
+	@tailwind utilities;
+
 	.antiFlicker {
 		min-height: 410px;
 	}
