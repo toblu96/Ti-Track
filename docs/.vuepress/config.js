@@ -61,5 +61,11 @@ module.exports = {
 
         lastUpdated: 'Last Updated',
     },
+    postcss: {
+      plugins: [
+        require("autoprefixer"),
+        require("tailwindcss")("./tailwind.config.js")
+      ]
+    }
 
 }
