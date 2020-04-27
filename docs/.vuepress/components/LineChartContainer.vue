@@ -21,7 +21,8 @@
 import LineChart from './LineChart.vue'
 import Tabs from './Tabs.vue'
 import Stats from './Stats.vue'
-import * as Papa from 'papaparse';
+import * as Papa from 'papaparse'
+import moment from 'moment'
 
 export default {
   name: 'LineChartContainer',
@@ -61,7 +62,15 @@ export default {
 	],
     options: {
       responsive: true,
-	  maintainAspectRatio: false
+	  maintainAspectRatio: false,
+	  scales: {
+		  xAxes: [{
+			  scaleLabel: {
+				display: true,
+				labelString: 'Timestamp in Minutes'
+			},
+		  }]
+	  }
 	},
 	stats: [
 		{title: 'min Angle', value: 0, unit: '°'},
@@ -94,6 +103,7 @@ export default {
 					local.stats[1].value = null
 					local.stats[2].value = null
 					local.stats[3].value = null
+					let startTime = ''
 
 					// Iteration durch CSV Header (Timestamp, Angle, etc.)
 					for (var header = 0; header < results.data[0].length; header++) {
@@ -113,8 +123,20 @@ export default {
 							// Nur eintragen wenn gültige Daten vorhanden
 							if (_data.length > 1) {
 								// Zeitachse auf Chart (Index 0)
-								if (local.chartdata.labels.indexOf(_data[0]) === -1) {
-									local.chartdata.labels.push(_data[0])
+								
+								// Startzeit eintragen
+								if (startTime == '') {
+									startTime = moment(_data[0], 'HH:mm:ss:SSS')
+									console.log("zeit eingetragen: " + startTime)
+								}
+
+								// Zeitdifferenz ausrechnen
+								let time    = moment(_data[0], 'HH:mm:ss:SSS')
+								let diff = moment.utc(time.diff(startTime)).format("mm:ss.SSS")
+								
+								// Werte nur einmal eintragen
+								if (local.chartdata.labels.indexOf(diff) === -1) {
+									local.chartdata.labels.push(diff)
 								}
 
 								// Daten einfüllen

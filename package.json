@@ -19,6 +19,7 @@
   "dependencies": {
     "autoprefixer": "^9.7.6",
     "chart.js": "^2.9.3",
+    "moment": "^2.24.0",
     "papaparse": "^5.2.0",
     "tailwindcss": "^1.2.0",
     "vue-chartjs": "^3.5.0"
