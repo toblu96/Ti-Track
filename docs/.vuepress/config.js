@@ -28,7 +28,7 @@ module.exports = {
         nav: [
           { text: 'About', link:   '/about/bluetoothAoA'},
           { text: 'Hardware', link:   '/hardware/setup'},
-          { text: 'Measurements', link:   '/measurements/environment'},
+          { text: 'Measurements', link:   '/measurements/singleAntennaIndoor'},
         ],
 
         algolia: {
@@ -51,9 +51,11 @@ module.exports = {
             ],
       
             '/measurements/': [
-              'environment',
-              'outdoor',
-              'distance'
+              'singleAntennaIndoor',
+              'singleAntennaOutdoor',
+              'doubleAntenna',
+              'tripleAntenna',
+              'conclusion'
             ],
       
         },
